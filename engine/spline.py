@@ -33,7 +33,8 @@ def spline(image_name, t, ctr, k):
     u3=np.linspace(0,1,(max(l*2,70)),endpoint=True)
     out = interpolate.splev(u3,tck)
     # real size of image
-    dpi = mpl.rcParams['figure.dpi']
+    # dpi = mpl.rcParams['figure.dpi']
+    dpi = 80
     height = im.height
     width = im.width
    
