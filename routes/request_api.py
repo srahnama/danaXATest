@@ -5,6 +5,7 @@ import ast
 import os
 from werkzeug.utils import secure_filename
 from engine.spline import spline
+from model import model
 
 
 REQUEST_API = Blueprint('request_api', __name__)
@@ -29,6 +30,7 @@ def home():
 @REQUEST_API.route('/', methods=['POST'])
 def upload_image():
     req = request.form.to_dict()
+   
     # print(req['cparam'])
     if 'file' not in request.files:
         flash('No file part')
@@ -40,8 +42,8 @@ def upload_image():
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         file.save(os.path.join(UPLOAD_FOLDER, filename))
+        model.save_data({file.filename:[ast.literal_eval(req['tparam']),ast.literal_eval(req['cparam']), int(req['kparam'])]})
         spline(filename,ast.literal_eval(req['tparam']),ast.literal_eval(req['cparam']), int(req['kparam']))
-        
         #print('upload_image filename: ' + filename)
         flash('Image successfully uploaded and displayed below')
         return render_template('index.html', filename=filename)

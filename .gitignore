@@ -1,5 +1,6 @@
 __pycache__
 engine/__pycache__
 routes/__pycache__
+model/__pycache__
 .vscode
 venv

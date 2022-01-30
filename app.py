@@ -7,6 +7,7 @@ from flask_cors import CORS
 from routes import request_api
 
 
+
 APP = Flask(__name__)
 
 UPLOAD_FOLDER = 'static/uploads/'
