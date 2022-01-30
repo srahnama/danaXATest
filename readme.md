@@ -59,7 +59,7 @@ k = 3
 
 ## Result
 
-![alt text](https://github.com/srahnama/danaXATest/blob/main/static/uploads/1.jpg?raw=true)
+![alt text](https://github.com/srahnama/danaXATest/blob/main/static/uploads/2.jpg?raw=true)
 
 ## Prerequisites
 
